@@ -1,0 +1,21 @@
+{
+  "name": "crystalit",
+  "version": "1.0.0",
+  "description": "CrystaLit: AI-powered literature crystallization pipeline. Turns a folder of research papers into structured notes, thematic ontology, coded labels, publication figures, and a literature review report. Includes companion skills for building the paper library and making strategic decisions.",
+  "author": {
+    "name": "Seyed Amir Ahmad Safavi-Naini",
+    "email": "sdamirsa@gmail.com"
+  },
+  "repository": "https://github.com/sdamirsa/crystalit-SKILL",
+  "license": "MIT",
+  "keywords": [
+    "literature-review",
+    "research",
+    "scientific-writing",
+    "ontology",
+    "thematic-analysis",
+    "knowledge-extraction",
+    "systematic-review",
+    "claude-code"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+    "paper_id": "Smith_2024",
+    "title": "Automated cardiac segmentation using deep learning",
+    "T1_Modeling_Techniques": {
+        "T1-S1_Algorithm": [
+            "nnU-Net",
+            "U-Net",
+            "V-Net"
+        ],
+        "T1-S2_Training_Strategy": [
+            "Fully_Supervised",
+            "Standard_Augmentation"
+        ]
+    },
+    "T2_Data_Characteristics": {
+        "T2-S1_Imaging_Modality": [
+            "Non_Contrast_CT"
+        ],
+        "T2-S2_Population": [
+            "Medium_200_to_1000",
+            "Single_Center"
+        ]
+    },
+    "T3_Evaluation": {
+        "T3-S1_Metrics": [
+            "Dice_Similarity_Coefficient",
+            "Hausdorff_Distance",
+            "Mean_Surface_Distance",
+            "Bland_Altman_Analysis"
+        ],
+        "T3-S2_Validation_Design": [
+            "Internal_Test_Set"
+        ]
+    },
+    "T4_Clinical_Application": {
+        "T4-S1_Task": [
+            "Chamber_Volumetry"
+        ]
+    },
+    "T5_Anatomy": {
+        "T5-S1_Cardiac_Structures": [
+            "Left_Ventricle",
+            "Right_Ventricle",
+            "Left_Atrium",
+            "Right_Atrium"
+        ]
+    },
+    "_comments": [
+        "Paper mentions opportunistic screening in discussion but does not validate it; labeled only Chamber_Volumetry as demonstrated task"
+    ]
+}

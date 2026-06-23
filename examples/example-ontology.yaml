@@ -1,0 +1,167 @@
+# Example CrystaLit Ontology
+# This is a simplified example for a cardiac CT segmentation literature review.
+# A real ontology for 30-60 papers would have 200-400 concepts.
+
+themes:
+  T1_Modeling_Techniques:
+    description: "Methods, architectures, and training strategies used across studies"
+    subthemes:
+      T1-S1_Algorithm:
+        description: "Core model architectures"
+        groups:
+          Deep_Learning:
+            description: "Neural network architectures"
+            concepts:
+              - U-Net
+              - nnU-Net
+              - 3D_CNN
+              - Vision_Transformer
+              - ResNet
+              - V-Net
+          Foundation_Models:
+            description: "Large pretrained models adapted for the task"
+            concepts:
+              - TotalSegmentator
+              - SAM_Medical
+              - CLIP_Medical
+          Classical_Traditional:
+            description: "Non-deep-learning methods"
+            concepts:
+              - Statistical_Shape_Model_SSM
+              - Atlas_Based
+              - Random_Forest
+      T1-S2_Training_Strategy:
+        description: "How models are trained"
+        groups:
+          Supervision:
+            description: "Supervision paradigm"
+            concepts:
+              - Fully_Supervised
+              - Self_Supervised_Pretraining
+              - Semi_Supervised
+              - Transfer_Learning
+              - Fine_Tuning
+          Data_Augmentation:
+            description: "Training-time augmentation approaches"
+            concepts:
+              - Standard_Augmentation
+              - Mixup
+              - CutMix
+              - Synthetic_Data
+
+  T2_Data_Characteristics:
+    description: "Properties of datasets used across studies"
+    subthemes:
+      T2-S1_Imaging_Modality:
+        description: "CT acquisition types"
+        groups:
+          CT_Types:
+            description: "Specific CT protocols"
+            concepts:
+              - Non_Contrast_CT
+              - Contrast_Enhanced_CTA
+              - CT_Pulmonary_Angiography_CTPA
+              - Calcium_Scoring_CT
+              - Dual_Energy_CT
+      T2-S2_Population:
+        description: "Study population characteristics"
+        groups:
+          Size:
+            description: "Dataset size categories"
+            concepts:
+              - Small_Under_200
+              - Medium_200_to_1000
+              - Large_Over_1000
+          Diversity:
+            description: "Population diversity"
+            concepts:
+              - Single_Center
+              - Multi_Center
+              - Multi_Scanner
+              - Multi_Country
+
+  T3_Evaluation:
+    description: "How studies validate their methods"
+    subthemes:
+      T3-S1_Metrics:
+        description: "Quantitative evaluation metrics"
+        groups:
+          Geometric:
+            description: "Overlap and distance metrics"
+            concepts:
+              - Dice_Similarity_Coefficient
+              - Hausdorff_Distance
+              - Mean_Surface_Distance
+          Volumetric:
+            description: "Volume-based metrics"
+            concepts:
+              - Bland_Altman_Analysis
+              - Correlation_Coefficient
+              - Volume_Error
+      T3-S2_Validation_Design:
+        description: "Validation methodology"
+        groups:
+          Validation_Type:
+            description: "Internal vs external"
+            concepts:
+              - Internal_Test_Set
+              - External_Validation
+              - Cross_Validation
+              - Prospective_Validation
+
+  T4_Clinical_Application:
+    description: "Clinical problems addressed"
+    subthemes:
+      T4-S1_Task:
+        description: "What the method does clinically"
+        groups:
+          Primary_Tasks:
+            description: "Core clinical tasks"
+            concepts:
+              - Chamber_Volumetry
+              - Ejection_Fraction
+              - Fat_Quantification
+              - Calcium_Scoring
+              - Vessel_Analysis
+              - Opportunistic_Screening
+
+  T5_Anatomy:
+    description: "Anatomical structures targeted"
+    subthemes:
+      T5-S1_Cardiac_Structures:
+        description: "Heart structures segmented or analyzed"
+        groups:
+          Chambers:
+            description: "Cardiac chambers"
+            concepts:
+              - Left_Ventricle
+              - Right_Ventricle
+              - Left_Atrium
+              - Right_Atrium
+          Myocardium:
+            description: "Heart muscle"
+            concepts:
+              - LV_Myocardium
+              - Pericardium
+          Great_Vessels:
+            description: "Major vessels"
+            concepts:
+              - Aorta
+              - Pulmonary_Artery
+              - Superior_Vena_Cava
+
+lateral_reasoning_pairs:
+  - pair: ["Single_Center", "Foundation_Models"]
+    rationale: "Foundation models require diverse training data, yet most cardiac CT studies are single-center, highlighting a data-ambition mismatch"
+
+  - pair: ["Self_Supervised_Pretraining", "Small_Under_200"]
+    rationale: "Self-supervised pretraining could unlock value from small labeled datasets, but few small-dataset studies explore this"
+
+  - pair: ["Dice_Similarity_Coefficient", "Chamber_Volumetry"]
+    rationale: "High Dice does not guarantee accurate volumes; comparing these reveals the gap between geometric and clinical validation"
+
+  - pair: ["Non_Contrast_CT", "Opportunistic_Screening"]
+    rationale: "Non-contrast CT is ubiquitous (every calcium score, every chest CT), making it the ideal modality for population-scale opportunistic screening"
+
+  - pair: ["External_Validation", "Multi_Country"]
+    rationale: "True generalizability requires multi-country external validation, yet most external validations use nearby institutions with similar protocols"
