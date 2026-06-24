@@ -44,11 +44,16 @@ claude --plugin-dir /path/to/crystalit-SKILL
 cp -r crystalit-SKILL/skills/* your-project/.claude/
 ```
 
-### Option C: Install as a plugin via marketplace (coming soon)
+### Option C: Install via the plugin marketplace
 
-```bash
-claude plugin install crystalit
+This repo is its own Claude Code marketplace. From inside Claude Code:
+
 ```
+/plugin marketplace add Sdamirsa/crystalit-SKILL
+/plugin install crystalit@crystalit
+```
+
+The first command registers the marketplace (`crystalit`); the second installs the `crystalit` plugin from it. Manage it later with `/plugin marketplace list`, `/plugin marketplace update crystalit`, or `/plugin marketplace remove crystalit`.
 
 ## Quick start
 

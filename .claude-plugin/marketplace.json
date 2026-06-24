@@ -1,0 +1,26 @@
+{
+  "name": "crystalit",
+  "owner": {
+    "name": "Seyed Amir Ahmad Safavi-Naini",
+    "email": "sdamirsa@gmail.com"
+  },
+  "description": "Marketplace for CrystaLit — turns a folder of research papers into crystallized knowledge for Claude Code.",
+  "plugins": [
+    {
+      "name": "crystalit",
+      "source": "./",
+      "description": "AI-powered literature crystallization pipeline: papers -> notes -> ontology -> labels -> figures -> review report. Includes companion skills for building the library and strategic decisions.",
+      "homepage": "https://github.com/Sdamirsa/crystalit-SKILL",
+      "repository": "https://github.com/Sdamirsa/crystalit-SKILL",
+      "license": "MIT",
+      "keywords": [
+        "literature-review",
+        "research",
+        "ontology",
+        "thematic-analysis",
+        "systematic-review",
+        "knowledge-extraction"
+      ]
+    }
+  ]
+}
